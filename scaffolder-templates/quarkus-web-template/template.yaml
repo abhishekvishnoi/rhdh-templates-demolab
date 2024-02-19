@@ -112,7 +112,7 @@ spec:
           group_id: ${{ parameters.group_id }}
           artifact_id: ${{ parameters.artifact_id }}
           java_package_name: ${{ parameters.java_package_name }}
-          owner: ${{ user.entity.metadata.name }}
+          owner: ${{ parameters.owner }}
           cluster: .apps.arolab37nonprod.goindigo.in
           host: ${{ parameters.repo.host }}
           destination: ${{ parameters.repo.owner }}/${{ parameters.component_id }}
@@ -156,7 +156,7 @@ spec:
           port: 8080
           repository_host: ${{ parameters.repo.host }}
           deployment_name: quarkus-template
-          user:  ${{ user.entity.metadata.name }}
+          user: ${{ parameters.owner }}
         targetPath: ./tenant-gitops
 
     - id: publish-gitops
