@@ -18,11 +18,6 @@ spec:
         - component_id
         - java_package_name
       properties:
-        owner:
-          title: Owner
-          type: string
-          default: abhishekvishnoi
-          description: owner
         component_id:
           title: Name
           type: string
@@ -35,6 +30,11 @@ spec:
           type: string
           default: redhat.janus
           description: Maven Group Id
+        owner:
+          title: Owner
+          type: string
+          default: abhishekvishnoi
+          description: owner
         artifact_id:
           title: Artifact Id
           type: string
@@ -112,7 +112,7 @@ spec:
           group_id: ${{ parameters.group_id }}
           artifact_id: ${{ parameters.artifact_id }}
           java_package_name: ${{ parameters.java_package_name }}
-          owner: ${{ parameters.owner }}
+          owner: ${{ parameters }}
           cluster: .apps.arolab37nonprod.goindigo.in
           host: ${{ parameters.repo.host }}
           destination: ${{ parameters.repo.owner }}/${{ parameters.component_id }}
@@ -156,7 +156,7 @@ spec:
           port: 8080
           repository_host: ${{ parameters.repo.host }}
           deployment_name: quarkus-template
-          user: ${{ parameters.owner }}
+          user: ${{ user.entity.metadata.name }}
         targetPath: ./tenant-gitops
 
     - id: publish-gitops
@@ -168,16 +168,6 @@ spec:
         description: gitops resources for ${{ parameters.component_id }}
         sourcePath: ./tenant-gitops
         repoVisibility: public
-
-    - id: create-argocd-resources
-      name: Create ArgoCD Resources
-      action: argocd:create-resources
-      input:
-        appName: ${{ parameters.component_id }}-bootstrap
-        argoInstance: main
-        namespace: janus-argocd
-        repoUrl: https://${{ parameters.repo.host }}/${{ parameters.repo.owner }}/${{ parameters.component_id }}-gitops.git
-        path: 'argocd/'
 
   output:
     links:
