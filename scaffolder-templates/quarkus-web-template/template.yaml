@@ -18,6 +18,11 @@ spec:
         - component_id
         - java_package_name
       properties:
+        owner:
+          title: Owner
+          type: string
+          default: abhishekvishnoi
+          description: owner
         component_id:
           title: Name
           type: string
