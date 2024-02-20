@@ -124,7 +124,7 @@ spec:
       action: publish:github
       input:
         repoUrl: "${{ parameters.repo.host }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.component_id}}"
-        repoVisibility: public
+        repoVisibility: private
 
     - id: register
       name: Register
@@ -167,7 +167,7 @@ spec:
         title: gitops resources for ${{ parameters.component_id }}
         description: gitops resources for ${{ parameters.component_id }}
         sourcePath: ./tenant-gitops
-        repoVisibility: public
+        repoVisibility: private
 
   output:
     links:
