@@ -5,6 +5,7 @@ metadata:
   labels:
     {{- include "quarkus-template.labels" $ | nindent 4 }}
   name: {{ include "quarkus-template.fullname" $ }}
+  namespace: dev-hub-test
 spec:
   {{- if .host }}
   host: {{ .host }}

@@ -4,6 +4,7 @@ metadata:
   name: {{ include "quarkus-template.fullname" . }}
   labels:
     {{- include "quarkus-template.labels" . | nindent 4 }}
+  namespace: dev-hub-test
 spec:
   type: {{ .Values.service.type }}
   ports:
