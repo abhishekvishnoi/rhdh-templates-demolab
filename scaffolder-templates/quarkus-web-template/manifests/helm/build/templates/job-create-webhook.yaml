@@ -2,6 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: {{ .Values.app.name }}-webhook-job
+  namespace: dev-hub-test
   annotations:
     argocd.argoproj.io/sync-wave: "3"
 spec:

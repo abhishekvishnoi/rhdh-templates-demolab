@@ -2,6 +2,7 @@ apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
 metadata:
   name: commit-binding
+  namespace: dev-hub-test
 spec:
   params:
     - name: git-repo-url

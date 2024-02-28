@@ -2,6 +2,7 @@ apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
 metadata:
   name: tag-binding-prod
+  namespace: dev-hub-test
 spec:
   params:
     - name: source-tag
