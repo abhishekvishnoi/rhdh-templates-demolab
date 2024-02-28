@@ -15,7 +15,7 @@ spec:
     helm:
       parameters:
       - name: namespace.name
-        value: ${{ values.component_id }}-dev
+        value: dev-hub-test
       - name: environment
         value: dev
       - name: image.tag
