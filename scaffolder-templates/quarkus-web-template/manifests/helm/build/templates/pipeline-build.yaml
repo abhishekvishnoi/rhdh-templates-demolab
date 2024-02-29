@@ -37,6 +37,7 @@ spec:
       workspaces:
         - name: output
           workspace: source-folder
+
     - name: package
       runAfter:
         - git-clone
@@ -48,20 +49,31 @@ spec:
           workspace: source-folder
         - name: maven-settings
           workspace: maven-settings
+
     - name: build-and-push
       params:
         - name: IMAGE
           value: $(params.output-image)
+        - name: BUILDER_IMAGE
+          value: registry.redhat.io/rhel8/buildah@sha256:6a68ece207bc5fd8db2dd5cc2d0b53136236fb5178eb5b71eebe5d07a3c33d13
+        - name: STORAGE_DRIVER
+          value: vfs
+        - name: DOCKERFILE
+          value: ./Dockerfile
+        - name: CONTEXT
+          value: .
+        - name: TLSVERIFY
+          value: "false"
+        - name: FORMAT
+          value: oci
       runAfter:
         - package
       taskRef:
-        kind: Task
-        name: kaniko
+        kind: ClusterTask
+        name: buildah
       workspaces:
         - name: source
           workspace: source-folder
-        - name: dockerconfig
-          workspace: docker-config
     - name: resync
       params:
         - name: COMPONENT_ID
