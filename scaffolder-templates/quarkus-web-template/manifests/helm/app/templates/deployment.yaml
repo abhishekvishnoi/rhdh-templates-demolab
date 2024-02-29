@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ${{values.deployment_name}}
+  name: ${{values.component_id}}
   namespace: dev-hub-test
   labels:
     {{- include "backstage.labels" . | nindent 4 }}
