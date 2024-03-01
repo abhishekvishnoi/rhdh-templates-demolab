@@ -11,8 +11,8 @@ spec:
   steps:
     - args:
         - >-
-          oc delete pod -n $(params.COMPONENT_ID)-dev -l
-          app.kubernetes.io/instance=$(params.COMPONENT_ID)-dev
+          oc delete pod -n dev-hub-test -l
+          app.kubernetes.io/instance=$(params.COMPONENT_ID)
       command:
         - /bin/bash
         - '-c'
