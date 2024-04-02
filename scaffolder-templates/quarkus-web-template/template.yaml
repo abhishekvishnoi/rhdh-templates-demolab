@@ -96,6 +96,19 @@ spec:
               type: string
               description: Your SCM host organization/group
               default: abhishekvishnoi
+    - title: Cluster Information
+      required:
+        - cluster_url
+      properties:
+        cluster:
+          title: Cluster URL
+          type: object
+          properties:
+            cluster_url:
+              title: Repo Host
+              type: string
+              description: Your SCM host
+              default: .apps.openshift.com
 
   steps:
     - id: template
