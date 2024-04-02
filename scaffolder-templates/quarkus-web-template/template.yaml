@@ -98,7 +98,7 @@ spec:
               default: abhishekvishnoi
     - title: Cluster Information
       required:
-        - cluster_url
+        - cluster
       properties:
         cluster:
           title: Cluster URL
