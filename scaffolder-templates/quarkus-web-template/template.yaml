@@ -18,6 +18,11 @@ spec:
         - component_id
         - java_package_name
       properties:
+        cluster_url:
+          title: Repo Host
+          type: string
+          description: Your SCM host
+          default: .apps.openshift.com
         component_id:
           title: Name
           type: string
@@ -96,20 +101,6 @@ spec:
               type: string
               description: Your SCM host organization/group
               default: abhishekvishnoi
-    - title: Cluster Information
-      required:
-        - cluster
-      properties:
-        cluster:
-          title: Cluster URL
-          type: object
-          properties:
-            cluster_url:
-              title: Repo Host
-              type: string
-              description: Your SCM host
-              default: .apps.openshift.com
-
   steps:
     - id: template
       name: Fetch Skeleton + Template
