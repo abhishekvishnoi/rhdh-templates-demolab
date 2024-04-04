@@ -16,7 +16,7 @@ metadata:
     #quay.io/repository-slug: ${{values.quay_destination | dump}}
     jira/project-key: KAN
     jira/token-type: Bearer
-    quay.io/repository-slug: `abvishno/node-hello'
+    quay.io/repository-slug: abvishno/node-hello
   tags:
     - java
     - quarkus
