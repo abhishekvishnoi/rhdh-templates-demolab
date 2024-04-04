@@ -9,6 +9,9 @@ metadata:
     - java
     - quarkus
     - maven
+  annotations:
+    jira/project-key: KAN
+    jira/token-type: Bearer
 spec:
   owner: rhdh
   type: service
