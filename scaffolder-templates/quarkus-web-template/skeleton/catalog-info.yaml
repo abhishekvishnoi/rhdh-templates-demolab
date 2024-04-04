@@ -13,9 +13,10 @@ metadata:
     backstage.io/source-location: url:https://${{values.host}}/${{values.destination}}
     backstage.io/techdocs-ref: url:https://${{values.host}}/${{values.destination}}
     gitlab.com/project-slug: ${{values.destination}}
-    quay.io/repository-slug: ${{values.quay_destination | dump}}
+    #quay.io/repository-slug: ${{values.quay_destination | dump}}
     jira/project-key: KAN
     jira/token-type: Bearer
+    quay.io/repository-slug: `abvishno/node-hello'
   tags:
     - java
     - quarkus
