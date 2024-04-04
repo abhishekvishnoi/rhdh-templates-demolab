@@ -14,6 +14,8 @@ metadata:
     backstage.io/techdocs-ref: url:https://${{values.host}}/${{values.destination}}
     gitlab.com/project-slug: ${{values.destination}}
     quay.io/repository-slug: ${{values.quay_destination | dump}}
+    jira/project-key: KAN
+    jira/token-type: Bearer
   tags:
     - java
     - quarkus
