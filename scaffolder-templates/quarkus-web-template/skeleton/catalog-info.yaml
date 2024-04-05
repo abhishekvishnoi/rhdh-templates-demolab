@@ -17,6 +17,7 @@ metadata:
     jira/project-key: KAN
     jira/token-type: Bearer
     quay.io/repository-slug: abvishno/node-hello
+    sonarqube.org/project-key: my-projects
   tags:
     - java
     - quarkus
