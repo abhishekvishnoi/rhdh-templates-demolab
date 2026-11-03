@@ -23,7 +23,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     #namespace: ${{ values.component_id }}-prod
-     namespace: appservices-prod
+    namespace: appservices-prod
   ignoreDifferences:
     - group: '*'
       jqPathExpressions:
