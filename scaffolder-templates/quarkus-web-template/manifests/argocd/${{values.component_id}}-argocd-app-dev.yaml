@@ -22,7 +22,8 @@ spec:
         value: latest
   destination:
     server: https://kubernetes.default.svc
-    namespace: ${{ values.component_id }}-dev
+    #namespace: ${{ values.component_id }}-dev
+    namespace: appservices-dev
   ignoreDifferences:
     - group: '*'
       jqPathExpressions:
